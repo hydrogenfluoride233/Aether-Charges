@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "entries": [
+    "crystal_charges:bronze_frost_scepter",
+    "crystal_charges:bronze_cloud_scepter",
+    "crystal_charges:silver_thunder_scepter",
+    "crystal_charges:gold_blaze_scepter"
+  ]
+}

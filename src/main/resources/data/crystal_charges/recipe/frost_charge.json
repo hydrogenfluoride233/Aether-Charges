@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    { "item": "aether:ambrosium_shard" },
+    { "item": "minecraft:gunpowder" },
+    { "tag": "crystal_charges:craft_frost_charge" }
+  ],
+  "result": { "id": "crystal_charges:frost_charge", "count": 2 }
+}

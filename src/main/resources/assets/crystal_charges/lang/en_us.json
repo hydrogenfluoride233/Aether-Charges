@@ -1,0 +1,20 @@
+{
+  "itemGroup.crystal_charges": "Aether Charges",
+  "item.crystal_charges.frost_charge": "Hoarfrost Charge",
+  "item.crystal_charges.blaze_charge": "Blaze Charge",
+  "item.crystal_charges.thunder_charge": "Thunderbolt Charge",
+  "item.crystal_charges.cloud_charge": "Driftcloud Charge",
+  "item.crystal_charges.frost_scepter": "Hoarfrost Scepter",
+  "item.crystal_charges.blaze_scepter": "Blaze Scepter",
+  "item.crystal_charges.thunder_scepter": "Thunderbolt Scepter",
+  "item.crystal_charges.cloud_scepter": "Driftcloud Scepter",
+  "entity.crystal_charges.crystal_bolt": "Crystal Bolt",
+  "lore.item.crystal_charges.frost_charge": "A shard of ambrosium wrapped in icestone. It bursts into a patch of cold, and the Sun Spirit hates it: hit it and the thing freezes as if its own ice crystal struck it.",
+  "lore.item.crystal_charges.blaze_charge": "A core ground from hellfire stone. Throw it and the landing spot burns for a good while.",
+  "lore.item.crystal_charges.thunder_charge": "A bolt of lightning that never fell, sealed in angelic stone. It falls where the charge lands.",
+  "lore.item.crystal_charges.cloud_charge": "Packed aercloud. It does not hurt much; it simply pushes whatever it hits along its path, the way a Zephyr pushes travellers off the islands.",
+  "lore.item.crystal_charges.frost_scepter": "Found deep in the bronze dungeon. No ammunition, only patience: it throws another ice crystal once it has recovered.",
+  "lore.item.crystal_charges.blaze_scepter": "A treasure of the gold dungeon. The fire crystal is the Sun Spirit's own trick; with this in hand it is yours too.",
+  "lore.item.crystal_charges.thunder_scepter": "Silver dungeon loot, once the Valkyrie Queen's. In her hands the thunder was a punishment; in yours it is a tool.",
+  "lore.item.crystal_charges.cloud_scepter": "Another bronze dungeon find. A flick of the wrist sends a cloud out to shove things aside."
+}

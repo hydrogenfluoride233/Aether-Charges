@@ -1,0 +1,33 @@
+package com.hydrogen.crystalcharges.item;
+
+import com.hydrogen.crystalcharges.Config;
+import com.hydrogen.crystalcharges.entity.CrystalBoltEntity;
+import com.hydrogen.crystalcharges.entity.Element;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
+
+/**
+ * Fires one crystal along the player's look direction.
+ */
+public final class CrystalShot {
+    public static void fire(Level level, Player player, Element element) {
+        if (level.isClientSide) {
+            return;
+        }
+        Vec3 eye = player.getEyePosition();
+        Vec3 look = player.getLookAngle();
+        double speed = element == Element.FROST ? Config.FROST_SPEED.get() : Config.BOLT_SPEED.get();
+        CrystalBoltEntity bolt = new CrystalBoltEntity(level, player, element);
+        bolt.setPos(eye.x, eye.y, eye.z);
+        bolt.setDeltaMovement(look.scale(speed));
+        level.addFreshEntity(bolt);
+        level.playSound(null, player.getX(), player.getY(), player.getZ(),
+                SoundEvents.SNOWBALL_THROW, SoundSource.PLAYERS, 0.5F, 1.1F);
+    }
+
+    private CrystalShot() {
+    }
+}

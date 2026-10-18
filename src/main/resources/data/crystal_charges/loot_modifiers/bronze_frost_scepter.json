@@ -1,0 +1,7 @@
+{
+  "type": "neoforge:add_table",
+  "conditions": [
+    { "condition": "neoforge:loot_table_id", "loot_table_id": "aether:chests/dungeon/bronze/bronze_dungeon_treasure" }
+  ],
+  "table": "crystal_charges:inject/bronze_frost_scepter"
+}
