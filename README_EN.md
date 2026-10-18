@@ -1,5 +1,7 @@
 # Aether Charges
 
+![logo](logo.png)
+
 English | [中文](README.md)
 
 Tired of playing half an hour of bowling with the Sun Spirit? Or maybe you just want a turn at being the boss — throw what they throw, right back at them? Then this mod is for you.

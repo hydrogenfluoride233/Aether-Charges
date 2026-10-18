@@ -35,3 +35,6 @@ run-data/
 *.iml
 
 *.log
+
+# 只用于生成 logo 的临时素材
+.logo/ice_ball.png
