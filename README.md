@@ -1,6 +1,8 @@
-# Aether Charges / 天境结晶弹
+# Aether Charges / 天境射弹
 
-## 内容
+或许你已经厌倦了和烈阳巨灵打半个小时的保龄球？又或者，你也想试一次当 Boss 的感觉——把它们扔过来的东西，原样扔回去。
+
+> 非官方附属，与 The Aether Team 无关。
 
 | 物品 | 弹体 | 效果 |
 |---|---|---|
@@ -9,16 +11,16 @@
 | 阳雷弹 | 风暴雷球 | 5 点伤害，落点召下一道闪电 |
 | 流云弹 | 境云冰晶 | 不造成伤害，沿弹道把目标推开 |
 
-结晶弹是一次性的，便宜、能连发。对应的**权杖**不消耗材料、可以反复使用，代价是更长的冷却，而且不能合成——只在青铜、白银、黄金三座地牢的箱子里。
+射弹是一次性的：神能晶片 ＋ 火药 ＋ 一份天境材料，一次做两枚。对应的权杖不消耗材料、可以反复使用，代价是更长的冷却，而且不能合成——只能在青铜、白银、黄金三座地牢的箱子里找到。
 
-伤害、冷却、弹速、是否落雷都在 `config/crystal_charges-common.toml` 里。
+伤害、冷却、弹速、是否落雷都可以在 `config/crystal_charges-common.toml` 里调。
+
+想知道每件东西的来历，把它们放进天境的传说之书（Book of Lore）里。
 
 ## 依赖
 
-- Minecraft 1.21.1 / NeoForge 21.1
+- Minecraft 1.21.1 / NeoForge 21.1.x
 - The Aether 1.21.1-1.5.x
-
-物品的 lore 是普通语言键，直接进天境自带的指南书，不需要额外装库。
 
 ## 构建
 
@@ -30,11 +32,11 @@
 ./gradlew build
 ```
 
-产物在 `build/libs/`。`libs/` 已写进 `.gitignore`：天境的 jar 只在编译时需要。
+产物在 `build/libs/`。`libs/` 已写进 `.gitignore`。
 
 ## 材质
 
-现在八件物品的图标都是程序生成的占位图，`preview/` 里有动画试验（菱形与球状各一版）。正式贴图还没画，见 [issue #1](https://github.com/hydrogenfluoride233/Aether-Charges/issues/1)。
+八件物品的图标目前都是程序生成的占位图，`preview/` 里有两版动画试验。正式贴图还在找人画，见 [issue #1](https://github.com/hydrogenfluoride233/Aether-Charges/issues/1)。
 
 ## 致谢
 
