@@ -15,7 +15,7 @@ Charges are single use: one ambrosium shard, one gunpowder and one Aether materi
 
 Damage, cooldowns, projectile speed and the lightning toggle are all in `config/crystal_charges-common.toml`.
 
-To read where each item comes from, drop it into the Aether's Book of Lore.
+To read where each item comes from, drop it into the Aether's Book of Lore (天境传说).
 
 ## Requirements
 
