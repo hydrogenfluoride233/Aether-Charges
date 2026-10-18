@@ -38,7 +38,7 @@
 
 ## 材质
 
-八件物品的图标目前都是程序生成的占位图，`preview/` 里有两版动画试验。正式贴图还在找人画，见 [issue #1](https://github.com/hydrogenfluoride233/Aether-Charges/issues/1)。
+四颗弹的图标暂时用原版火焰弹换色，四根权杖还是程序画的占位图。正式贴图等 [sweetcornna](https://github.com/sweetcornna) 细化，见 [issue #1](https://github.com/hydrogenfluoride233/Aether-Charges/issues/1)。
 
 ## 致谢
 

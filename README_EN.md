@@ -38,7 +38,7 @@ The jar lands in `build/libs/`. `libs/` is git-ignored.
 
 ## Textures
 
-All eight item icons are currently procedurally generated placeholders; `preview/` holds two animation tests. Proper sprites are still being looked for — see [issue #1](https://github.com/hydrogenfluoride233/Aether-Charges/issues/1).
+The four charges are recoloured versions of the vanilla fire charge; the scepters are still procedural placeholders. Proper sprites are being refined by [sweetcornna](https://github.com/sweetcornna) — see [issue #1](https://github.com/hydrogenfluoride233/Aether-Charges/issues/1).
 
 ## Credits
 
