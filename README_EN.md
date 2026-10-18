@@ -6,7 +6,7 @@
 
 Tired of playing half an hour of bowling with the Sun Spirit? Or maybe you just want a turn at being the boss — throw what they throw, right back at them? Then this mod is for you.
 
-**Aether Charges** adds four charges and scepters to the Aether:
+**Aether Charges** adds four charges and their scepters to the Aether:
 
 | Item | Projectile | Effect |
 |---|---|---|
@@ -15,11 +15,11 @@ Tired of playing half an hour of bowling with the Sun Spirit? Or maybe you just 
 | Thunderbolt Charge | Thunder Crystal | 5 damage, calls down lightning where it lands |
 | Driftcloud Charge | Cloud Crystal | no damage, knocks the target back along the bolt's path |
 
-Charges are single use. The matching scepters can find in dungeons and be used again and again.
+Charges are single use. The matching scepters cannot be crafted, only found in dungeon chests, and can be used again and again.
 
 Damage, cooldowns, projectile speed and the lightning toggle are all in `config/aether_charges-common.toml`.
 
-To get more info, read the Aether's Book of Lore for more details.
+To read where each item comes from, drop it into the Aether's Book of Lore.
 
 ## Requirements
 
