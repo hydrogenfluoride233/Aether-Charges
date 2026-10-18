@@ -1,49 +1,49 @@
-# Aether Charges
+# Aether Charges / 天境结晶弹
 
-An unofficial addon for [The Aether](https://modrinth.com/mod/aether) that turns the bosses' own crystal projectiles into things you can throw.
+天境（The Aether）的非官方附属。把 Boss 扔出来的那些结晶弹，做成玩家能拿在手里的东西。
 
-> Not affiliated with The Aether Team.
+> 非官方附属，与 The Aether Team 无关。
 
-## What it adds
+## 加了什么
 
-| Item | Projectile | Effect |
+| 物品 | 弹体 | 效果 |
 |---|---|---|
-| Hoarfrost Charge | Ice Crystal | 7 damage, slows; freezes the Sun Spirit |
-| Blaze Charge | Fire Crystal | 15 damage, sets the target alight |
-| Thunderbolt Charge | Thunder Crystal | 5 damage, calls down lightning |
-| Driftcloud Charge | Cloud Crystal | knocks the target back along the bolt's path |
+| 冰霜弹 | 冰结球 | 7 点伤害并减速；命中烈阳巨灵时把它冻住 |
+| 炽炎弹 | 滚炎球 | 15 点伤害并点燃 |
+| 阳雷弹 | 风暴雷球 | 5 点伤害，落点召下一道闪电 |
+| 流云弹 | 境云冰晶 | 不造成伤害，沿弹道把目标推开 |
 
-Charges are single use. The matching **scepters** fire the same projectile without consuming anything, but have a longer cooldown; they are found in bronze, silver and gold dungeon chests rather than crafted.
+结晶弹是一次性的，便宜、能连发。对应的**权杖**不消耗材料、可以反复使用，代价是更长的冷却，而且不能合成——只在青铜、白银、黄金三座地牢的箱子里。
 
-Damage, cooldown, projectile speed and the lightning toggle are all in `config/crystal_charges-common.toml`.
+伤害、冷却、弹速、是否落雷都在 `config/crystal_charges-common.toml` 里。
 
-## Requirements
+## 依赖
 
-- Minecraft 1.21.1, NeoForge 21.1
-- The Aether 1.21.1-1.5.x (required)
+- Minecraft 1.21.1 / NeoForge 21.1
+- The Aether 1.21.1-1.5.x
 
-Lore text is shipped as plain language keys, so the items show up in the Aether's own Book of Lore — no extra library needed.
+物品的 lore 是普通语言键，直接进天境自带的指南书，不需要额外装库。
 
-## Building
+## 构建
 
 ```
-# 1. drop the Aether jar into libs/ (compile-only dependency)
+# 1. 把天境的 jar 放进 libs/（只用于编译，不随包分发）
 #    libs/aether-1.21.1-1.5.10-neoforge.jar
 
-# 2. build
+# 2. 构建
 ./gradlew build
 ```
 
-The jar lands in `build/libs/`. `libs/` is git-ignored on purpose: the Aether jar is only needed at compile time and is not redistributed.
+产物在 `build/libs/`。`libs/` 已写进 `.gitignore`：天境的 jar 只在编译时需要。
 
-## Textures
+## 材质
 
-Current item icons are procedurally generated placeholders — see [preview/](preview/) for the animation test. Help with proper sprites is very welcome.
+现在八件物品的图标都是程序生成的占位图，`preview/` 里有动画试验（菱形与球状各一版）。正式贴图还没画，见 [issue #1](https://github.com/hydrogenfluoride233/Aether-Charges/issues/1)。
 
-## Credits
+## 致谢
 
-- The Aether Team — the crystal entities, model and projectile textures this addon reuses at runtime
+- The Aether Team：晶体实体、模型与射弹贴图都是运行期直接复用天境的东西
 
-## License
+## 许可
 
 MIT
