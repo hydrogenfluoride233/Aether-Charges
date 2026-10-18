@@ -1,12 +1,12 @@
 {
   "values": [
-    "crystal_charges:frost_charge",
-    "crystal_charges:blaze_charge",
-    "crystal_charges:thunder_charge",
-    "crystal_charges:cloud_charge",
-    "crystal_charges:frost_scepter",
-    "crystal_charges:blaze_scepter",
-    "crystal_charges:thunder_scepter",
-    "crystal_charges:cloud_scepter"
+    "aether_charges:frost_charge",
+    "aether_charges:blaze_charge",
+    "aether_charges:thunder_charge",
+    "aether_charges:cloud_charge",
+    "aether_charges:frost_scepter",
+    "aether_charges:blaze_scepter",
+    "aether_charges:thunder_scepter",
+    "aether_charges:cloud_scepter"
   ]
 }

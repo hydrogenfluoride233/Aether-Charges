@@ -1,7 +1,0 @@
-{
-  "type": "neoforge:add_table",
-  "conditions": [
-    { "condition": "neoforge:loot_table_id", "loot_table_id": "aether:chests/dungeon/silver/silver_dungeon_treasure" }
-  ],
-  "table": "crystal_charges:inject/silver_thunder_scepter"
-}

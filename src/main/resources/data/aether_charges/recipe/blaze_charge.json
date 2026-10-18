@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    { "item": "aether:ambrosium_shard" },
+    { "item": "minecraft:gunpowder" },
+    { "tag": "aether_charges:craft_blaze_charge" }
+  ],
+  "result": { "id": "aether_charges:blaze_charge", "count": 2 }
+}

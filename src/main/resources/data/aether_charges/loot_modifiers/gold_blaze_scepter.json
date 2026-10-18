@@ -1,0 +1,7 @@
+{
+  "type": "neoforge:add_table",
+  "conditions": [
+    { "condition": "neoforge:loot_table_id", "loot_table_id": "aether:chests/dungeon/gold/gold_dungeon_treasure" }
+  ],
+  "table": "aether_charges:inject/gold_blaze_scepter"
+}

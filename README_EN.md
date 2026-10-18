@@ -13,7 +13,7 @@ Tired of playing half an hour of bowling with the Sun Spirit? Or maybe you just 
 
 Charges are single use: one ambrosium shard, one gunpowder and one Aether material, two per craft. The matching scepters never consume anything and can be used again and again, at the cost of a longer cooldown — and they cannot be crafted, only found in the chests of the bronze, silver and gold dungeons.
 
-Damage, cooldowns, projectile speed and the lightning toggle are all in `config/crystal_charges-common.toml`.
+Damage, cooldowns, projectile speed and the lightning toggle are all in `config/aether_charges-common.toml`.
 
 To read where each item comes from, drop it into the Aether's Book of Lore (天境传说).
 
