@@ -2,11 +2,11 @@
 
 ![logo](logo.png)
 
-English | [中文](README.md)
+[中文](README.md) | English
 
 Tired of playing half an hour of bowling with the Sun Spirit? Or maybe you just want a turn at being the boss — throw what they throw, right back at them? Then this mod is for you.
 
-Aether Charges adds four charges to the Aether:
+**Aether Charges** adds four charges and scepters to the Aether:
 
 | Item | Projectile | Effect |
 |---|---|---|
@@ -15,32 +15,16 @@ Aether Charges adds four charges to the Aether:
 | Thunderbolt Charge | Thunder Crystal | 5 damage, calls down lightning where it lands |
 | Driftcloud Charge | Cloud Crystal | no damage, knocks the target back along the bolt's path |
 
-Charges are single use: one ambrosium shard, one gunpowder and one Aether material, two per craft. The matching scepters never consume anything and can be used again and again, at the cost of a longer cooldown — and they cannot be crafted, only found in the chests of the bronze, silver and gold dungeons.
+Charges are single use. The matching scepters can find in dungeons and be used again and again.
 
 Damage, cooldowns, projectile speed and the lightning toggle are all in `config/aether_charges-common.toml`.
 
-To read where each item comes from, drop it into the Aether's Book of Lore (天境传说).
+To get more info, read the Aether's Book of Lore for more details.
 
 ## Requirements
 
 - Minecraft 1.21.1 / NeoForge 21.1.x
 - The Aether 1.21.1-1.5.x
-
-## Building
-
-```
-# 1. put the Aether jar into libs/ (compile-only, never redistributed)
-#    libs/aether-1.21.1-1.5.10-neoforge.jar
-
-# 2. build
-./gradlew build
-```
-
-The jar lands in `build/libs/`. `libs/` is git-ignored.
-
-## Textures
-
-The four charges are recoloured versions of the vanilla fire charge; the scepters are still procedural placeholders. Proper sprites are being refined by [sweetcornna](https://github.com/sweetcornna) — see [issue #1](https://github.com/hydrogenfluoride233/Aether-Charges/issues/1).
 
 ## Credits
 
