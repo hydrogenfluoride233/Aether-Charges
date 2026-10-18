@@ -26,22 +26,6 @@ To read where each item comes from, drop it into the Aether's Book of Lore (天�
 - Minecraft 1.21.1 / NeoForge 21.1.x
 - The Aether 1.21.1-1.5.x
 
-## Building
-
-```
-# 1. put the Aether jar into libs/ (compile-only, never redistributed)
-#    libs/aether-1.21.1-1.5.10-neoforge.jar
-
-# 2. build
-./gradlew build
-```
-
-The jar lands in `build/libs/`. `libs/` is git-ignored.
-
-## Textures
-
-The four charges are recoloured versions of the vanilla fire charge; the scepters are still procedural placeholders. Proper sprites are being refined by [sweetcornna](https://github.com/sweetcornna) — see [issue #1](https://github.com/hydrogenfluoride233/Aether-Charges/issues/1).
-
 ## Credits
 
 - The Aether Team — the crystal entities, model and projectile textures this addon reuses at runtime
