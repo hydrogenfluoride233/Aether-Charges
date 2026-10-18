@@ -2,9 +2,9 @@
 
 English | [中文](README.md)
 
-Tired of playing half an hour of bowling with the Sun Spirit? Or maybe you just want a turn at being the boss — throw what they throw, right back at them? This mod may fit you.
+Tired of playing half an hour of bowling with the Sun Spirit? Or maybe you just want a turn at being the boss — throw what they throw, right back at them? Then this mod is for you.
 
-Aether Charges added four charges into the Aether: 
+Aether Charges adds four charges to the Aether:
 
 | Item | Projectile | Effect |
 |---|---|---|
