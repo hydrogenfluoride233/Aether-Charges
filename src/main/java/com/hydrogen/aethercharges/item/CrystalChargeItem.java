@@ -23,7 +23,7 @@ public class CrystalChargeItem extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
-        CrystalShot.fire(level, player, element);
+        CrystalShot.fire(level, player, element, true);
         if (!level.isClientSide) {
             if (!player.getAbilities().instabuild) {
                 stack.shrink(1);

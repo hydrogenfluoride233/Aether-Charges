@@ -26,7 +26,7 @@ public class CrystalScepterItem extends Item {
         if (player.getCooldowns().isOnCooldown(this)) {
             return InteractionResultHolder.fail(stack);
         }
-        CrystalShot.fire(level, player, element);
+        CrystalShot.fire(level, player, element, false);
         if (!level.isClientSide) {
             player.getCooldowns().addCooldown(this, Config.SCEPTER_COOLDOWN.get());
         }

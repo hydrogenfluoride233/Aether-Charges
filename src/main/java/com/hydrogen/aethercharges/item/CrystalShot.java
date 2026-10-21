@@ -13,14 +13,17 @@ import net.minecraft.world.phys.Vec3;
  * Fires one crystal along the player's look direction.
  */
 public final class CrystalShot {
-    public static void fire(Level level, Player player, Element element) {
+    public static void fire(Level level, Player player, Element element, boolean fromCharge) {
         if (level.isClientSide) {
             return;
         }
         Vec3 eye = player.getEyePosition();
         Vec3 look = player.getLookAngle();
         double speed = element == Element.FROST ? Config.FROST_SPEED.get() : Config.BOLT_SPEED.get();
-        CrystalBoltEntity bolt = new CrystalBoltEntity(level, player, element);
+        if (fromCharge) {
+            speed *= Config.CHARGE_SPEED_MULTIPLIER.get();
+        }
+        CrystalBoltEntity bolt = new CrystalBoltEntity(level, player, element, fromCharge);
         bolt.setPos(eye.x, eye.y, eye.z);
         bolt.setDeltaMovement(look.scale(speed));
         level.addFreshEntity(bolt);

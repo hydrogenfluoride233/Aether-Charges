@@ -44,5 +44,15 @@
   "aether_charges.configuration.cloud_damage": "Driftcloud charge damage",
   "aether_charges.configuration.cloud_damage.tooltip": "Damage dealt by the cloud bolt (0 by default: knockback only).",
   "aether_charges.configuration.cloud_knockback": "Driftcloud knockback",
-  "aether_charges.configuration.cloud_knockback.tooltip": "Horizontal knockback strength of the cloud bolt."
+  "aether_charges.configuration.cloud_knockback.tooltip": "Horizontal knockback strength of the cloud bolt.",
+  "aether_charges.configuration.charge_damage_multiplier": "Charge damage multiplier",
+  "aether_charges.configuration.charge_damage_multiplier.tooltip": "Damage multiplier for single-use charges; scepters use the full value.",
+  "aether_charges.configuration.charge_speed_multiplier": "Charge speed multiplier",
+  "aether_charges.configuration.charge_speed_multiplier.tooltip": "Projectile speed multiplier for single-use charges.",
+  "aether_charges.configuration.charge_knockback_multiplier": "Charge knockback multiplier",
+  "aether_charges.configuration.charge_knockback_multiplier.tooltip": "Knockback multiplier for the cloud charge.",
+  "aether_charges.configuration.charge_freeze_multiplier": "Charge freeze multiplier",
+  "aether_charges.configuration.charge_freeze_multiplier.tooltip": "Freeze duration multiplier for the frost charge.",
+  "aether_charges.configuration.charge_ignite_multiplier": "Charge ignite multiplier",
+  "aether_charges.configuration.charge_ignite_multiplier.tooltip": "Ignite duration multiplier for the blaze charge."
 }

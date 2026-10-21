@@ -33,14 +33,17 @@ import net.minecraft.world.phys.HitResult;
 public class CrystalBoltEntity extends ThrowableItemProjectile {
     private static final EntityDataAccessor<Integer> DATA_ELEMENT =
             SynchedEntityData.defineId(CrystalBoltEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Boolean> DATA_FROM_CHARGE =
+            SynchedEntityData.defineId(CrystalBoltEntity.class, EntityDataSerializers.BOOLEAN);
 
     public CrystalBoltEntity(EntityType<? extends CrystalBoltEntity> type, Level level) {
         super(type, level);
     }
 
-    public CrystalBoltEntity(Level level, LivingEntity owner, Element element) {
+    public CrystalBoltEntity(Level level, LivingEntity owner, Element element, boolean fromCharge) {
         super(ModEntities.CRYSTAL_BOLT.get(), owner, level);
         setElement(element);
+        setFromCharge(fromCharge);
         setItem(stackFor(element));
     }
 
@@ -58,6 +61,7 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
         builder.define(DATA_ELEMENT, Element.FIRE.ordinal());
+        builder.define(DATA_FROM_CHARGE, false);
     }
 
     public Element element() {
@@ -68,6 +72,14 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
 
     public void setElement(Element element) {
         entityData.set(DATA_ELEMENT, element.ordinal());
+    }
+
+    public boolean fromCharge() {
+        return entityData.get(DATA_FROM_CHARGE);
+    }
+
+    public void setFromCharge(boolean fromCharge) {
+        entityData.set(DATA_FROM_CHARGE, fromCharge);
     }
 
     @Override
@@ -89,6 +101,9 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
                 case CLOUD -> Config.CLOUD_DAMAGE.get().floatValue();
                 case FROST -> Config.FROST_DAMAGE.get().floatValue();
             };
+            if (fromCharge()) {
+                damage *= Config.CHARGE_DAMAGE_MULTIPLIER.get().floatValue();
+            }
             boolean damaged = damage > 0.0F && target.hurt(damageSource(element), damage);
             applyOnHit(element, target, damaged);
         }
@@ -110,7 +125,11 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
         switch (element) {
             case FIRE -> {
                 if (damaged) {
-                    target.igniteForSeconds(Config.BLAZE_IGNITE_SECONDS.get().floatValue());
+                    float seconds = Config.BLAZE_IGNITE_SECONDS.get().floatValue();
+                    if (fromCharge()) {
+                        seconds *= Config.CHARGE_IGNITE_MULTIPLIER.get().floatValue();
+                    }
+                    target.igniteForSeconds(seconds);
                 }
             }
             case THUNDER -> {
@@ -125,6 +144,9 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
                 target.setDeltaMovement(current.x, current.y + 0.5D, current.z);
                 Vec3 self = getDeltaMovement();
                 double factor = Config.CLOUD_KNOCKBACK.get();
+                if (fromCharge()) {
+                    factor *= Config.CHARGE_KNOCKBACK_MULTIPLIER.get();
+                }
                 target.setDeltaMovement(target.getDeltaMovement().x + self.x * factor,
                         target.getDeltaMovement().y,
                         target.getDeltaMovement().z + self.z * factor);
@@ -191,7 +213,11 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
         }
         try {
             target.getClass().getMethod("setFrozen", boolean.class).invoke(target, true);
-            target.getClass().getMethod("setFrozenDuration", int.class).invoke(target, Config.FROST_FREEZE_TICKS.get());
+            int ticks = Config.FROST_FREEZE_TICKS.get();
+            if (fromCharge()) {
+                ticks = Math.max(1, (int) (ticks * Config.CHARGE_FREEZE_MULTIPLIER.get()));
+            }
+            target.getClass().getMethod("setFrozenDuration", int.class).invoke(target, ticks);
         } catch (ReflectiveOperationException ignored) {
             // The Aether changed its API; the frost bolt still damages, it just stops freezing.
         }

@@ -27,11 +27,11 @@ public final class Config {
 
     public static final ModConfigSpec.IntValue CHARGE_COOLDOWN = BUILDER
             .comment("Cooldown after throwing a single-use charge, in ticks.")
-            .defineInRange("charge_cooldown", 10, 0, 200);
+            .defineInRange("charge_cooldown", 20, 0, 400);
 
     public static final ModConfigSpec.IntValue SCEPTER_COOLDOWN = BUILDER
             .comment("Cooldown after casting with a scepter, in ticks.")
-            .defineInRange("scepter_cooldown", 60, 0, 400);
+            .defineInRange("scepter_cooldown", 20, 0, 400);
 
     public static final ModConfigSpec.DoubleValue BLAZE_DAMAGE = BUILDER
             .comment("Damage of the blaze bolt.")
@@ -56,6 +56,27 @@ public final class Config {
     public static final ModConfigSpec.DoubleValue CLOUD_DAMAGE = BUILDER
             .comment("Damage of the cloud bolt.")
             .defineInRange("cloud_damage", 0.0D, 0.0D, 100.0D);
+
+
+    public static final ModConfigSpec.DoubleValue CHARGE_DAMAGE_MULTIPLIER = BUILDER
+            .comment("Damage multiplier applied to single-use charges (scepters use the full value).")
+            .defineInRange("charge_damage_multiplier", 0.55D, 0.0D, 2.0D);
+
+    public static final ModConfigSpec.DoubleValue CHARGE_SPEED_MULTIPLIER = BUILDER
+            .comment("Projectile speed multiplier applied to single-use charges.")
+            .defineInRange("charge_speed_multiplier", 0.85D, 0.0D, 2.0D);
+
+    public static final ModConfigSpec.DoubleValue CHARGE_KNOCKBACK_MULTIPLIER = BUILDER
+            .comment("Knockback multiplier applied to the cloud charge.")
+            .defineInRange("charge_knockback_multiplier", 0.7D, 0.0D, 2.0D);
+
+    public static final ModConfigSpec.DoubleValue CHARGE_FREEZE_MULTIPLIER = BUILDER
+            .comment("Freeze duration multiplier applied to the frost charge.")
+            .defineInRange("charge_freeze_multiplier", 0.35D, 0.0D, 2.0D);
+
+    public static final ModConfigSpec.DoubleValue CHARGE_IGNITE_MULTIPLIER = BUILDER
+            .comment("Ignite duration multiplier applied to the blaze charge.")
+            .defineInRange("charge_ignite_multiplier", 0.5D, 0.0D, 2.0D);
 
     public static final ModConfigSpec SPEC = BUILDER.build();
 

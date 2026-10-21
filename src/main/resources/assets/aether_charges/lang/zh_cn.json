@@ -44,5 +44,15 @@
   "aether_charges.configuration.cloud_damage": "流云弹伤害",
   "aether_charges.configuration.cloud_damage.tooltip": "流云弹造成的伤害，默认 0（只击退）。",
   "aether_charges.configuration.cloud_knockback": "流云弹击退强度",
-  "aether_charges.configuration.cloud_knockback.tooltip": "流云弹把目标推开的力度。"
+  "aether_charges.configuration.cloud_knockback.tooltip": "流云弹把目标推开的力度。",
+  "aether_charges.configuration.charge_damage_multiplier": "射弹伤害倍率",
+  "aether_charges.configuration.charge_damage_multiplier.tooltip": "一次性射弹的伤害倍率；权杖使用完整数值。",
+  "aether_charges.configuration.charge_speed_multiplier": "射弹速度倍率",
+  "aether_charges.configuration.charge_speed_multiplier.tooltip": "一次性射弹的飞行速度倍率。",
+  "aether_charges.configuration.charge_knockback_multiplier": "射弹击退倍率",
+  "aether_charges.configuration.charge_knockback_multiplier.tooltip": "流云弹的击退倍率。",
+  "aether_charges.configuration.charge_freeze_multiplier": "射弹冻结倍率",
+  "aether_charges.configuration.charge_freeze_multiplier.tooltip": "冰霜弹冻结烈阳巨灵的时长倍率。",
+  "aether_charges.configuration.charge_ignite_multiplier": "射弹点燃倍率",
+  "aether_charges.configuration.charge_ignite_multiplier.tooltip": "炽炎弹点燃时长的倍率。"
 }
