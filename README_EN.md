@@ -15,9 +15,24 @@ Tired of playing half an hour of bowling with the Sun Spirit? Or maybe you just 
 | Thunderbolt Charge / Thunderbolt Scepter | Thunder Crystal | 5 damage, calls down lightning where it lands |
 | Driftcloud Charge / Driftcloud Scepter | Cloud Crystal | no damage, knocks the target back along the bolt's path |
 
-Charges are single use. The matching scepters cannot be crafted, only found in dungeon chests, and can be used again and again.
+Charges are single use; scepters come from the bosses' treasure chests and can be used again and again. Charges hit softer than scepters by design — the scepter is the one you keep.
 
-Damage, cooldowns, projectile speed and the lightning toggle are all in `config/aether_charges-common.toml`.
+Scepters can be enchanted:
+
+| Enchantment | Effect |
+|---|---|
+| Crystallisation | Stronger elemental effect: longer freeze, longer burn, a chance of extra lightning, stronger knockback |
+| Swiftness | Shorter cooldown |
+| Volley | One extra crystal per cast, slightly spread |
+
+Enchanted books show up in the dungeons' regular chests, in Explore Ruins: The Aether's ruins, and occasionally on a fishing line in the Aether.
+
+Damage, cooldowns, projectile speed, the lightning toggle and every multiplier are in `config/aether_charges-common.toml`.
+
+## Integration
+
+- **Deep Aether**: the Driftcloud charge and scepter only exist when it is installed
+- **Deep Aether + Aether: Treasure Reforging**: all four scepters can be crafted in the Combiner — Nature's Staff + the matching charge + a reforging material
 
 To read where each item comes from, drop it into the Aether's Book of Lore.
 
