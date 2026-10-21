@@ -137,7 +137,7 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
                     if (fromCharge()) {
                         seconds *= Config.CHARGE_IGNITE_MULTIPLIER.get().floatValue();
                     }
-                    seconds += 2.0F * empower();
+                    seconds += 1.0F * empower();
                     target.igniteForSeconds(seconds);
                 }
             }
@@ -145,8 +145,9 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
                 // 落雷是独立效果：即使目标免疫这一发伤害，也该打下来
                 if (Config.THUNDER_SUMMONS_LIGHTNING.get()) {
                     strikeLightning();
-                    // 晶化：每级多落一道雷，落在附近
-                    for (int i = 0; i < empower(); i++) {
+                    // 晶化：每级 +12% 概率多落一道雷，最高 100%
+                    double chance = Math.min(1.0D, 0.12D * empower());
+                    if (chance > 0.0D && random.nextDouble() < chance) {
                         strikeLightning(getX() + (random.nextDouble() - 0.5D) * 3.0D,
                                 getZ() + (random.nextDouble() - 0.5D) * 3.0D);
                     }
@@ -161,7 +162,7 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
                 if (fromCharge()) {
                     factor *= Config.CHARGE_KNOCKBACK_MULTIPLIER.get();
                 }
-                factor *= 1.0D + 0.25D * empower();
+                factor *= 1.0D + 0.15D * empower();
                 target.setDeltaMovement(target.getDeltaMovement().x + self.x * factor,
                         target.getDeltaMovement().y,
                         target.getDeltaMovement().z + self.z * factor);
@@ -173,7 +174,7 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
             }
             case FROST -> {
                 if (damaged) {
-                    target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 1));
+                    target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 120, 0));
                     freezeSunSpirit(target);
                 }
             }
@@ -236,7 +237,7 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
             if (fromCharge()) {
                 ticks = Math.max(1, (int) (ticks * Config.CHARGE_FREEZE_MULTIPLIER.get()));
             }
-            ticks = (int) (ticks * (1.0D + 0.35D * empower()));
+            ticks = (int) (ticks * (1.0D + 0.10D * empower()));
             target.getClass().getMethod("setFrozenDuration", int.class).invoke(target, ticks);
         } catch (ReflectiveOperationException ignored) {
             // The Aether changed its API; the frost bolt still damages, it just stops freezing.

@@ -24,8 +24,9 @@ public final class CrystalShot {
             speed *= Config.CHARGE_SPEED_MULTIPLIER.get();
         }
         spawn(level, player, eye, look, element, speed, fromCharge, empower);
-        // 连发：左右各偏 8°
-        for (int i = 1; i <= volley; i++) {
+        // 连发：左右各偏 8°，最多额外 3 发
+        int extra = Math.min(volley, 3);
+        for (int i = 1; i <= extra; i++) {
             double angle = Math.toRadians(8.0) * (i % 2 == 1 ? 1 : -1);
             double cos = Math.cos(angle);
             double sin = Math.sin(angle);

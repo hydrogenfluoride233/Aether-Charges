@@ -27,13 +27,14 @@ public class CrystalScepterItem extends Item {
         if (player.getCooldowns().isOnCooldown(this)) {
             return InteractionResultHolder.fail(stack);
         }
-        int empower = ModEnchantments.clamped(level, ModEnchantments.EMPOWERMENT, stack);
-        int volley = ModEnchantments.clamped(level, ModEnchantments.VOLLEY, stack);
-        int swift = ModEnchantments.clamped(level, ModEnchantments.SWIFT, stack);
+        int empower = ModEnchantments.level(level, ModEnchantments.EMPOWERMENT, stack);
+        int volley = ModEnchantments.level(level, ModEnchantments.VOLLEY, stack);
+        int swift = ModEnchantments.level(level, ModEnchantments.SWIFT, stack);
         CrystalShot.fire(level, player, element, false, empower, volley);
         if (!level.isClientSide) {
-            int cooldown = (int) Math.round(Config.SCEPTER_COOLDOWN.get() * (1.0D - 0.10D * swift));
-            player.getCooldowns().addCooldown(this, Math.max(1, cooldown));
+            double factor = Math.max(0.15D, 1.0D - 0.08D * swift);
+            int cooldown = (int) Math.round(Config.SCEPTER_COOLDOWN.get() * factor);
+            player.getCooldowns().addCooldown(this, Math.max(5, cooldown));
         }
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
     }
