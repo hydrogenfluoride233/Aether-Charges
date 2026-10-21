@@ -28,6 +28,7 @@
 
 ## 致谢
 
+- [sweetcornna](https://github.com/sweetcornna)：全部物品图标
 - The Aether Team：晶体实体、模型与射弹贴图都是运行期直接复用天境的东西
 
 ## 许可

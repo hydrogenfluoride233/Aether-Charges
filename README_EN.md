@@ -28,6 +28,7 @@ To read where each item comes from, drop it into the Aether's Book of Lore.
 
 ## Credits
 
+- [sweetcornna](https://github.com/sweetcornna) — all item icons
 - The Aether Team — the crystal entities, model and projectile textures this addon reuses at runtime
 
 ## License
