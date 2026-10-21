@@ -12,11 +12,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:enchanted_book",
+          "name": "minecraft:book",
           "functions": [
             {
               "function": "minecraft:enchant_randomly",
-              "options": "aether_charges:scepter_enchants"
+              "options": "#aether_charges:scepter_enchants"
             }
           ]
         }
