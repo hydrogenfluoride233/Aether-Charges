@@ -54,5 +54,11 @@
   "aether_charges.configuration.charge_freeze_multiplier": "Charge freeze multiplier",
   "aether_charges.configuration.charge_freeze_multiplier.tooltip": "Freeze duration multiplier for the frost charge.",
   "aether_charges.configuration.charge_ignite_multiplier": "Charge ignite multiplier",
-  "aether_charges.configuration.charge_ignite_multiplier.tooltip": "Ignite duration multiplier for the blaze charge."
+  "aether_charges.configuration.charge_ignite_multiplier.tooltip": "Ignite duration multiplier for the blaze charge.",
+  "enchantment.aether_charges.empowerment": "Crystallisation",
+  "enchantment.aether_charges.empowerment.desc": "Strengthens the scepter's elemental effect: longer freeze, longer burn, more lightning, stronger knockback.",
+  "enchantment.aether_charges.swift": "Swiftness",
+  "enchantment.aether_charges.swift.desc": "Shortens the scepter's cooldown.",
+  "enchantment.aether_charges.volley": "Volley",
+  "enchantment.aether_charges.volley.desc": "Fires one extra crystal per cast, slightly spread."
 }

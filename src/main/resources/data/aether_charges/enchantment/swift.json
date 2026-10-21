@@ -1,0 +1,21 @@
+{
+  "anvil_cost": 3,
+  "description": {
+    "translate": "enchantment.aether_charges.swift"
+  },
+  "effects": {},
+  "max_cost": {
+    "base": 40,
+    "per_level_above_first": 25
+  },
+  "max_level": 3,
+  "min_cost": {
+    "base": 12,
+    "per_level_above_first": 25
+  },
+  "slots": [
+    "mainhand"
+  ],
+  "supported_items": "#aether_charges:scepters",
+  "weight": 5
+}

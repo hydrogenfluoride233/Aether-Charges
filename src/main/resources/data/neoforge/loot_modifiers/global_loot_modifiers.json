@@ -1,6 +1,14 @@
 {
   "replace": false,
   "entries": [
+    "aether_charges:book_brass_loot",
+    "aether_charges:book_bronze_loot",
+    "aether_charges:book_er_cockatrice_nest",
+    "aether_charges:book_er_hellfire",
+    "aether_charges:book_er_moa_nest",
+    "aether_charges:book_er_sky_lake",
+    "aether_charges:book_fishing",
+    "aether_charges:book_silver_loot",
     "aether_charges:brass_cloud_scepter_craft",
     "aether_charges:brass_cloud_scepter_no_craft",
     "aether_charges:bronze_frost_scepter_craft",

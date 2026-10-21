@@ -13,6 +13,9 @@ public final class ModLootConditions {
     public static final DeferredHolder<LootItemConditionType, LootItemConditionType> MODS_LOADED =
             CONDITIONS.register("mods_loaded", () -> new LootItemConditionType(ModsLoadedCondition.CODEC));
 
+    public static final DeferredHolder<LootItemConditionType, LootItemConditionType> IN_DIMENSION =
+            CONDITIONS.register("in_dimension", () -> new LootItemConditionType(InDimensionCondition.CODEC));
+
     private ModLootConditions() {
     }
 }

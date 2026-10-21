@@ -1,0 +1,14 @@
+{
+  "type": "neoforge:add_table",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:gameplay/fishing"
+    },
+    {
+      "condition": "aether_charges:in_dimension",
+      "dimension": "aether:the_aether"
+    }
+  ],
+  "table": "aether_charges:inject/enchant_book_fishing"
+}

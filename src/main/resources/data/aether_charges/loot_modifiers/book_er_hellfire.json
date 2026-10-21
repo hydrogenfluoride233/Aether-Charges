@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_table",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "explore_ruins_aether:chests/small_hellfire_dungeon"
+    }
+  ],
+  "table": "aether_charges:inject/enchant_book"
+}

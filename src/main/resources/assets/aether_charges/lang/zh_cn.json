@@ -54,5 +54,11 @@
   "aether_charges.configuration.charge_freeze_multiplier": "射弹冻结倍率",
   "aether_charges.configuration.charge_freeze_multiplier.tooltip": "冰霜弹冻结烈阳巨灵的时长倍率。",
   "aether_charges.configuration.charge_ignite_multiplier": "射弹点燃倍率",
-  "aether_charges.configuration.charge_ignite_multiplier.tooltip": "炽炎弹点燃时长的倍率。"
+  "aether_charges.configuration.charge_ignite_multiplier.tooltip": "炽炎弹点燃时长的倍率。",
+  "enchantment.aether_charges.empowerment": "晶化",
+  "enchantment.aether_charges.empowerment.desc": "强化权杖所打出的元素效果：冻结更久、燃烧更久、落雷更多、击退更远。",
+  "enchantment.aether_charges.swift": "迅捷",
+  "enchantment.aether_charges.swift.desc": "缩短权杖的冷却时间。",
+  "enchantment.aether_charges.volley": "连发",
+  "enchantment.aether_charges.volley.desc": "每次施法额外打出一发晶体，略微散开。"
 }

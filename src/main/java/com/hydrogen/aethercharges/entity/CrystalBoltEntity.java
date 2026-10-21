@@ -35,15 +35,18 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
             SynchedEntityData.defineId(CrystalBoltEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Boolean> DATA_FROM_CHARGE =
             SynchedEntityData.defineId(CrystalBoltEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Integer> DATA_EMPOWER =
+            SynchedEntityData.defineId(CrystalBoltEntity.class, EntityDataSerializers.INT);
 
     public CrystalBoltEntity(EntityType<? extends CrystalBoltEntity> type, Level level) {
         super(type, level);
     }
 
-    public CrystalBoltEntity(Level level, LivingEntity owner, Element element, boolean fromCharge) {
+    public CrystalBoltEntity(Level level, LivingEntity owner, Element element, boolean fromCharge, int empower) {
         super(ModEntities.CRYSTAL_BOLT.get(), owner, level);
         setElement(element);
         setFromCharge(fromCharge);
+        entityData.set(DATA_EMPOWER, empower);
         setItem(stackFor(element));
     }
 
@@ -62,6 +65,7 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
         super.defineSynchedData(builder);
         builder.define(DATA_ELEMENT, Element.FIRE.ordinal());
         builder.define(DATA_FROM_CHARGE, false);
+        builder.define(DATA_EMPOWER, 0);
     }
 
     public Element element() {
@@ -72,6 +76,10 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
 
     public void setElement(Element element) {
         entityData.set(DATA_ELEMENT, element.ordinal());
+    }
+
+    public int empower() {
+        return entityData.get(DATA_EMPOWER);
     }
 
     public boolean fromCharge() {
@@ -129,6 +137,7 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
                     if (fromCharge()) {
                         seconds *= Config.CHARGE_IGNITE_MULTIPLIER.get().floatValue();
                     }
+                    seconds += 2.0F * empower();
                     target.igniteForSeconds(seconds);
                 }
             }
@@ -136,6 +145,11 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
                 // 落雷是独立效果：即使目标免疫这一发伤害，也该打下来
                 if (Config.THUNDER_SUMMONS_LIGHTNING.get()) {
                     strikeLightning();
+                    // 晶化：每级多落一道雷，落在附近
+                    for (int i = 0; i < empower(); i++) {
+                        strikeLightning(getX() + (random.nextDouble() - 0.5D) * 3.0D,
+                                getZ() + (random.nextDouble() - 0.5D) * 3.0D);
+                    }
                 }
             }
             case CLOUD -> {
@@ -147,6 +161,7 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
                 if (fromCharge()) {
                     factor *= Config.CHARGE_KNOCKBACK_MULTIPLIER.get();
                 }
+                factor *= 1.0D + 0.25D * empower();
                 target.setDeltaMovement(target.getDeltaMovement().x + self.x * factor,
                         target.getDeltaMovement().y,
                         target.getDeltaMovement().z + self.z * factor);
@@ -168,10 +183,14 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
     }
 
     private void strikeLightning() {
+        strikeLightning(getX(), getZ());
+    }
+
+    private void strikeLightning(double x, double z) {
         if (level() instanceof ServerLevel server) {
             LightningBolt bolt = EntityType.LIGHTNING_BOLT.create(server);
             if (bolt != null) {
-                bolt.moveTo(getX(), getY(), getZ());
+                bolt.moveTo(x, getY(), z);
                 bolt.setCause(getOwner() instanceof net.minecraft.server.level.ServerPlayer player ? player : null);
                 server.addFreshEntity(bolt);
             }
@@ -217,6 +236,7 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
             if (fromCharge()) {
                 ticks = Math.max(1, (int) (ticks * Config.CHARGE_FREEZE_MULTIPLIER.get()));
             }
+            ticks = (int) (ticks * (1.0D + 0.35D * empower()));
             target.getClass().getMethod("setFrozenDuration", int.class).invoke(target, ticks);
         } catch (ReflectiveOperationException ignored) {
             // The Aether changed its API; the frost bolt still damages, it just stops freezing.
