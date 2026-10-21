@@ -138,7 +138,7 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
                         seconds *= Config.CHARGE_IGNITE_MULTIPLIER.get().floatValue();
                     }
                     seconds += 1.0F * empower();
-                    target.igniteForSeconds(seconds);
+                    target.igniteForSeconds(Math.min(60.0F, seconds));
                 }
             }
             case THUNDER -> {
@@ -162,7 +162,7 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
                 if (fromCharge()) {
                     factor *= Config.CHARGE_KNOCKBACK_MULTIPLIER.get();
                 }
-                factor *= 1.0D + 0.15D * empower();
+                factor = Math.min(10.0D, factor * (1.0D + 0.15D * empower()));
                 target.setDeltaMovement(target.getDeltaMovement().x + self.x * factor,
                         target.getDeltaMovement().y,
                         target.getDeltaMovement().z + self.z * factor);
@@ -237,7 +237,7 @@ public class CrystalBoltEntity extends ThrowableItemProjectile {
             if (fromCharge()) {
                 ticks = Math.max(1, (int) (ticks * Config.CHARGE_FREEZE_MULTIPLIER.get()));
             }
-            ticks = (int) (ticks * (1.0D + 0.10D * empower()));
+            ticks = Math.min(600, (int) (ticks * (1.0D + 0.10D * empower())));
             target.getClass().getMethod("setFrozenDuration", int.class).invoke(target, ticks);
         } catch (ReflectiveOperationException ignored) {
             // The Aether changed its API; the frost bolt still damages, it just stops freezing.
