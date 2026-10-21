@@ -3,7 +3,7 @@
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",
-      "loot_table_id": "aether:chests/dungeon/bronze/bronze_dungeon_treasure"
+      "loot_table_id": "aether:chests/dungeon/bronze/bronze_dungeon_reward"
     },
     {
       "condition": "aether_charges:mods_loaded",

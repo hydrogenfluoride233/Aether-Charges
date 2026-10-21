@@ -3,7 +3,7 @@
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",
-      "loot_table_id": "aether:chests/dungeon/bronze/bronze_dungeon_loot"
+      "loot_table_id": "aether:chests/dungeon/bronze/bronze_dungeon"
     }
   ],
   "table": "aether_charges:inject/enchant_book"

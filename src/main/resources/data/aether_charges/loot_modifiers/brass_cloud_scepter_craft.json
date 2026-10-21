@@ -3,7 +3,7 @@
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",
-      "loot_table_id": "deep_aether:chests/dungeon/brass/brass_dungeon_treasure"
+      "loot_table_id": "deep_aether:chests/dungeon/brass/brass_dungeon_reward"
     },
     {
       "condition": "aether_charges:mods_loaded",
