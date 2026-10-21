@@ -1,0 +1,18 @@
+{
+  "type": "neoforge:add_table",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "aether:chests/dungeon/bronze/bronze_dungeon_treasure"
+    },
+    {
+      "condition": "aether_charges:mods_loaded",
+      "mods": [
+        "deep_aether",
+        "aether_treasure_reforging"
+      ],
+      "loaded": true
+    }
+  ],
+  "table": "aether_charges:inject/bronze_frost_scepter_craft"
+}

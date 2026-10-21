@@ -1,0 +1,18 @@
+{
+  "type": "neoforge:add_table",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "aether:chests/dungeon/silver/silver_dungeon_treasure"
+    },
+    {
+      "condition": "aether_charges:mods_loaded",
+      "mods": [
+        "deep_aether",
+        "aether_treasure_reforging"
+      ],
+      "loaded": false
+    }
+  ],
+  "table": "aether_charges:inject/silver_thunder_scepter_no_craft"
+}

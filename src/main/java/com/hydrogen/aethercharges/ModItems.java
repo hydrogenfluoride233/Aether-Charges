@@ -9,6 +9,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public final class ModItems {
@@ -25,6 +26,10 @@ public final class ModItems {
     public static final DeferredItem<Item> THUNDER_SCEPTER = scepter("thunder_scepter", Element.THUNDER);
     public static final DeferredItem<Item> CLOUD_SCEPTER = scepter("cloud_scepter", Element.CLOUD);
 
+    private static boolean deepAetherLoaded() {
+        return ModList.get().isLoaded("deep_aether");
+    }
+
     private static DeferredItem<Item> charge(String name, Element element) {
         return ITEMS.register(name, () -> new CrystalChargeItem(new Item.Properties().stacksTo(16), element));
     }
@@ -40,11 +45,15 @@ public final class ModItems {
                 output.accept(FROST_CHARGE.get());
                 output.accept(BLAZE_CHARGE.get());
                 output.accept(THUNDER_CHARGE.get());
-                output.accept(CLOUD_CHARGE.get());
+                if (deepAetherLoaded()) {
+                    output.accept(CLOUD_CHARGE.get());
+                }
                 output.accept(FROST_SCEPTER.get());
                 output.accept(BLAZE_SCEPTER.get());
                 output.accept(THUNDER_SCEPTER.get());
-                output.accept(CLOUD_SCEPTER.get());
+                if (deepAetherLoaded()) {
+                    output.accept(CLOUD_SCEPTER.get());
+                }
             }).build());
 
     private ModItems() {

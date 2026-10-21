@@ -1,5 +1,6 @@
 package com.hydrogen.aethercharges;
 
+import com.hydrogen.aethercharges.loot.ModLootConditions;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -13,6 +14,7 @@ public class AetherCharges {
         ModItems.ITEMS.register(modBus);
         ModItems.TABS.register(modBus);
         ModEntities.ENTITIES.register(modBus);
+        ModLootConditions.CONDITIONS.register(modBus);
         container.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 }

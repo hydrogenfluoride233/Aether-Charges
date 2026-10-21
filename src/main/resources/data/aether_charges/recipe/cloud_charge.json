@@ -2,9 +2,24 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    { "item": "aether:ambrosium_shard" },
-    { "item": "minecraft:gunpowder" },
-    { "tag": "aether_charges:craft_cloud_charge" }
+    {
+      "item": "aether:ambrosium_shard"
+    },
+    {
+      "item": "minecraft:gunpowder"
+    },
+    {
+      "tag": "aether_charges:craft_cloud_charge"
+    }
   ],
-  "result": { "id": "aether_charges:cloud_charge", "count": 2 }
+  "result": {
+    "id": "aether_charges:cloud_charge",
+    "count": 2
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "deep_aether"
+    }
+  ]
 }

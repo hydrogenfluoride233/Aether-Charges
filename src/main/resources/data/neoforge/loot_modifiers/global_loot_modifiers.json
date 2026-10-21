@@ -1,9 +1,13 @@
 {
   "replace": false,
   "entries": [
-    "aether_charges:bronze_frost_scepter",
-    "aether_charges:bronze_cloud_scepter",
-    "aether_charges:silver_thunder_scepter",
-    "aether_charges:gold_blaze_scepter"
+    "aether_charges:brass_cloud_scepter_craft",
+    "aether_charges:brass_cloud_scepter_no_craft",
+    "aether_charges:bronze_frost_scepter_craft",
+    "aether_charges:bronze_frost_scepter_no_craft",
+    "aether_charges:gold_blaze_scepter_craft",
+    "aether_charges:gold_blaze_scepter_no_craft",
+    "aether_charges:silver_thunder_scepter_craft",
+    "aether_charges:silver_thunder_scepter_no_craft"
   ]
 }
